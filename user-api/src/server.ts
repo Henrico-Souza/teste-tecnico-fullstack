@@ -1,17 +1,15 @@
 import express from "express";
 import cors from "cors";
+import { usersRouter } from "./routes/users.routes";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("User API is running");
-});
+app.use("/users", usersRouter);
 
-const PORT = 3333;
+app.listen(3333, () => {
+    console.log(`Server rodando em http://localhost:3333`);
+}); 
 
-app.listen(PORT, () => {
-    console.log(`Server rodando na porta ${PORT}`);
-});
