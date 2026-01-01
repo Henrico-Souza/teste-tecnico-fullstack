@@ -11,10 +11,16 @@ export function UserForm({ onUserCreated }: UserFormProps) {
     const [age, setAge] = useState("");
     const [errors, setErrors] = useState<any>([]);
 
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState("");
+
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setErrors({});
+        setSuccess("");
+        setLoading(true);
 
+        try {
         const response = await fetch(`${API_BASE_URL}/users`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,7 +41,13 @@ export function UserForm({ onUserCreated }: UserFormProps) {
         setName("");
         setEmail("");
         setAge("");
+            setSuccess("Usuario criado com sucesso!");
         onUserCreated();
+        } catch (err) {
+            setErrors({ general: "Conexão com o servidor falhou." });
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
