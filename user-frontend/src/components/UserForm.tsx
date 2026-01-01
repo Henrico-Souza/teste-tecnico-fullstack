@@ -9,6 +9,7 @@ export function UserForm({ onUserCreated }: UserFormProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
+
     const [errors, setErrors] = useState<any>([]);
 
     const [loading, setLoading] = useState(false);
@@ -51,6 +52,41 @@ export function UserForm({ onUserCreated }: UserFormProps) {
     }
 
     return (
-        <form onSubmit={handleSubmit}></form>
+        <form onSubmit={handleSubmit}>
+            <input
+                className=""
+                placeholder="Nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            {errors?.name && <p className="error">{errors.name[0]}</p>}
+
+            <input
+                className=""
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors?.email && <p className="error">{errors.email[0]}</p>}
+
+            <input
+                className=""
+                placeholder="Age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+            />
+            {errors?.age && <p className="error">{errors.age[0]}</p>}
+
+            {errors?.general && <p className="error">{errors.general}</p>}
+
+            {success && <p className="success">{success}</p>}
+
+            <button
+                disabled={loading}
+                className="submit"
+            >
+                {loading ? "Cadastrando..." : "Cadastrar"}
+            </button>
+        </form>
     )
 }
