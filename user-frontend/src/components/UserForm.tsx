@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { API_BASE_URL } from "../services/api";
 
+interface UserFormProps {
+    onUserCreated: () => void;
+}
+
 export function UserForm({ onUserCreated }: any) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
