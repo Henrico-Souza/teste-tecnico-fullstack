@@ -22,28 +22,28 @@ export function UserForm({ onUserCreated }: UserFormProps) {
         setLoading(true);
 
         try {
-        const response = await fetch(`${API_BASE_URL}/users`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                name,
-                email,
-                age: Number(age)
-            }),
-        });
+            const response = await fetch(`${API_BASE_URL}/users`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    age: Number(age)
+                }),
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if (response.ok) {
-            setErrors(data.errors || { general: data.message });
-            return;
-        }
+            if (response.ok) {
+                setErrors(data.errors || { general: data.message });
+                return;
+            }
 
-        setName("");
-        setEmail("");
-        setAge("");
+            setName("");
+            setEmail("");
+            setAge("");
             setSuccess("Usuario criado com sucesso!");
-        onUserCreated();
+            onUserCreated();
         } catch (err) {
             setErrors({ general: "Conexão com o servidor falhou." });
         } finally {
