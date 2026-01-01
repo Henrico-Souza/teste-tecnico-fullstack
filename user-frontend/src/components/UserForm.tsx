@@ -5,7 +5,7 @@ interface UserFormProps {
     onUserCreated: () => void;
 }
 
-export function UserForm({ onUserCreated }: any) {
+export function UserForm({ onUserCreated }: UserFormProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
