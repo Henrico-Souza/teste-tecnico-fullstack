@@ -34,7 +34,7 @@ export function UserForm({ onUserCreated }: UserFormProps) {
 
             const data = await response.json();
 
-            if (response.ok) {
+            if (!response.ok) {
                 setErrors(data.errors || { general: data.message });
                 return;
             }
