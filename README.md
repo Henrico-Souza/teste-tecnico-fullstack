@@ -79,6 +79,8 @@ npm run dev
 - `npm install` instalará as dependências.
 - `npm run dev` irá rodar a aplicação em http://localhost:5173
 
+---
+
 ### 4 - Acessar a página web
 
 Ao entrar em http://localhost:5173 a aplicação estará funcionando normalmente.
