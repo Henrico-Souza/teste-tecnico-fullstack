@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Teste Técnico – Cadastro de Usuários
 
-Currently, two official plugins are available:
+Este projeto é um teste técnico fullstack para cadastro e listagem de usuários.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Stack utilizada
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+- Node.js
+- TypeScript
+- Express
+- Zod (validação)
+- CORS
 
-## Expanding the ESLint configuration
+### Frontend
+- React
+- TypeScript
+- Vite
+- TailwindCSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Backend
+- Cadastro de usuários
+- Persistência em memória
+- Validação de dados com Zod
+- Retorno de erros de validação
+- Verificação de email duplicado
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Frontend
+- Formulário de cadastro de usuários
+- Listagem de usuários cadastrados
+- Exibição de erros retornados pela API
+- Feedback de loading e sucesso
+- Layout responsivo
+
+---
+
+## Como rodar o projeto
+
+### Pré-requisitos
+- Node.js (instale pelo site oficial: https://nodejs.org)
+- NPM (instalado junto com Node.js)
+
+---
+
+### 1 - Clonar o repositório
+
+- Clone o repositório com `git clone [URL_REPOSITORIO]`
+- Entre no repósitório com `cd [REPOSITORIO]`
+
+---
+
+### 2 - Rodar o Backend
+
+```
+cd user-api
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `npm install` instalará as dependências.
+- `npm run dev` irá rodar a API em http://localhost:3333
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3 - Rodar o Frontend
+
 ```
+cd user-frontend
+npm install
+npm run dev
+```
+
+- `npm install` instalará as dependências.
+- `npm run dev` irá rodar a aplicação em http://localhost:5173
+
+### 4 - Acessar a página web
+
+Ao entrar em http://localhost:5173 a aplicação estará funcionando normalmente.
+
+Aproveite para testar à vontade!
