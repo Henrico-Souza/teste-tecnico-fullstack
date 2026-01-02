@@ -51,7 +51,7 @@ Este projeto é um teste técnico fullstack para cadastro e listagem de usuário
 ### 1 - Clonar o repositório
 
 - Clone o repositório com `git clone [URL_REPOSITORIO]`
-- Entre no repósitório com `cd [REPOSITORIO]`
+- Entre no repósitório com `cd [NOME_DO_REPOSITORIO]`
 
 ---
 
