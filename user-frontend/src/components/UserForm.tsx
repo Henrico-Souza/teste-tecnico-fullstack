@@ -44,6 +44,8 @@ export function UserForm({ onUserCreated }: UserFormProps) {
             setAge("");
             setSuccess("Usuario criado com sucesso!");
             onUserCreated();
+
+            setTimeout(() => setSuccess(""), 1500);
         } catch (err) {
             setErrors({ general: "Conexão com o servidor falhou." });
         } finally {
