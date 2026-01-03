@@ -51,7 +51,7 @@ Este projeto é um teste técnico fullstack para cadastro e listagem de usuário
 ### 1 - Clonar o repositório
 
 - Clone o repositório com `git clone [URL_REPOSITORIO]`
-- Entre no repósitório com `cd [REPOSITORIO]`
+- Entre no repósitório com `cd [NOME_DO_REPOSITORIO]`
 
 ---
 
@@ -78,6 +78,8 @@ npm run dev
 
 - `npm install` instalará as dependências.
 - `npm run dev` irá rodar a aplicação em http://localhost:5173
+
+---
 
 ### 4 - Acessar a página web
 
