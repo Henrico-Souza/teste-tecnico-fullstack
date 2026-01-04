@@ -13,8 +13,8 @@ function App() {
   return (
     <Router>
       <header className="p-3 bg-blue-900 flex gap-4 justify-end items-center">
-        <Link to="/" className="px-4 py-2 text-white hover:bg-blue-950 rounded transition-colors duration-400">Novo Usuário</Link>
-        <Link to="/users" className="px-4 py-2 text-white hover:bg-blue-950 rounded transition-colors duration-400">Usuários</Link>
+        <Link to="/" className="link-button">Novo Usuário</Link>
+        <Link to="/users" className="link-button">Usuários</Link>
       </header>
 
       <div>
