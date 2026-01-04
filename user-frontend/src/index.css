@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+@layer components {
+  .principal-container {
+    @apply flex min-h-screen items-center justify-center bg-gray-100 p-4;
+  }
+
+  .secondary-container {
+    @apply w-full max-w-md rounded-lg bg-white p-8 shadow-xl;
+  }
+
+  .title {
+    @apply pb-5 border-b text-2xl font-semibold text-gray-800;
+  }
+
+  .link-button {
+    @apply px-4 py-2 
+            text-white 
+            hover:bg-blue-950 rounded 
+            transition-colors duration-400;
+  }
+
+  .input-field {
+    @apply mx-2 mt-1 px-3 py-2 
+            border border-gray-300  hover:border-gray-400 rounded-md shadow-sm 
+            focus:outline-none focus:border-blue-400 focus:shadow-blue-200 transition-all;
+  }
+
+  .input-error {
+    @apply border-red-500;
+  }
+
+  .message-error {
+    @apply px-3 mb-2 text-sm text-red-500;
+  }
+
+  .message-success {
+    @apply p-2 text-green-500 border rounded;
+  }
+
+  .cadastro-btn {
+    @apply px-4 py-2 mt-6 font-semibold rounded text-white 
+            bg-blue-600 hover:bg-blue-700 transition-colors duration-200;
+  }
+
+  .list-message {
+    @apply w-full max-w-md mx-auto mt-10 p-6 text-xl flex justify-center items-center border rounded drop-shadow-xl;
+  }
+
+  .list-item {
+    @apply pb-2 flex flex-col gap-1 border border-gray-300 rounded-sm hover:bg-gray-200 bg-gray-100 transition-all duration-100;
+  }
+}
