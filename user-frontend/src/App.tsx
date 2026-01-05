@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-      <header className="p-3 bg-blue-900 flex gap-4 justify-end items-center">
+      <header className="fixed top-0 left-0 right-0 p-3 bg-blue-900 flex gap-4 justify-end items-center">
         <Link to="/" className="link-button">Novo Usuário</Link>
         <Link to="/users" className="link-button">Usuários</Link>
       </header>
